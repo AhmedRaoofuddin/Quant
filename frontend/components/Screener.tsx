@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { UniverseData } from "@/lib/quant-types";
 import { fmtNumber, fmtPercent } from "@/lib/format";
-import { sectorColor } from "@/lib/sectors";
+import { sectorColor, sectorInk } from "@/lib/sectors";
 import { Panel, MetricBar, Readout, SectionHead } from "@/components/Panel";
 import { RiskReturnScatter } from "@/components/quant/RiskReturnScatter";
 import { SectorBars } from "@/components/quant/SectorBars";
@@ -238,7 +238,7 @@ export function Screener() {
                       <span className="truncate text-[11px] text-faint">{a.name}</span>
                     </span>
                   </td>
-                  <td className="text-left"><span className="mono text-[10px]" style={{ color: sectorColor(a.sector) }}>{a.sector}</span></td>
+                  <td className="text-left"><span className="mono text-[10px]" style={{ color: sectorInk(a.sector) }}>{a.sector}</span></td>
                   <td className="text-right mono text-text">{fmtNumber(a.last)}</td>
                   <td className={`text-right mono ${a.totalReturn >= 0 ? "pos" : "neg"}`}>{fmtPercent(a.totalReturn, 0)}</td>
                   <td className={`text-right mono ${a.annReturn >= 0 ? "pos" : "neg"}`}>{fmtPercent(a.annReturn, 0)}</td>

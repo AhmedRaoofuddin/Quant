@@ -50,8 +50,8 @@ Eleven pages on live prices. No API keys, no paid feed.
 
 <img src="media/ui/strategies.png" alt="Strategy library: six strategies compared, capacity beside Sharpe" width="100%">
 
-<sub><b>Strategies</b>  ·  a family backtested together, with each one's capacity next to its Sharpe.
-Reversal leads on Sharpe at 1.32 and still carries the least capital.</sub>
+<sub><b>Strategies</b>  ·  20 documented anomalies backtested together, each with its capacity, factor
+alpha and regime split. Reversal leads on Sharpe and still carries the least capital.</sub>
 
 </div>
 
@@ -124,7 +124,7 @@ Reversal wins on the number everyone publishes and loses on the number that deci
 can allocate. Its edge is real; it just cannot be bought at size, because cost scales with turnover
 while alpha does not. **A backtest that cannot tell you this is not finished.**
 
-Alpha-Forge answers the three questions an allocator actually asks, in order:
+Alpha-Forge answers the four questions an allocator actually asks, in order:
 
 <table>
 <tr>
@@ -154,7 +154,32 @@ the honest answer of which constraint binds first.
 
 </td>
 </tr>
+<tr>
+<td colspan="3" valign="top">
+
+### 4. Is it alpha, and does it survive being run together?
+
+Factor attribution separates alpha from repackaged beta with Newey-West standard errors. Then
+**joint capacity**: run the library together and overlapping names compete for the same daily
+volume, so the blend carries far less than the sum of its parts.
+
+</td>
+</tr>
 </table>
+
+### Capacity is not additive
+
+The measurement nobody else makes. Twenty strategies, each sized on its own book:
+
+| | |
+|---|---:|
+| Sum of individual deployable capacities | $13.19B |
+| What the blended book actually carries | **$1.53B** |
+| **Overlap tax** | **88%** |
+
+The strategies hold 55 distinct names between them. A name two strategies both want carries both
+positions against one day's volume. Sizing each sleeve independently and adding up is the standard
+mistake, and it overstates deployable capital by an order of magnitude here.
 
 ### The gap this fills
 

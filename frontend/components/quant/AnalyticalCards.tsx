@@ -1,7 +1,7 @@
 "use client";
 
 import type { AssetStats } from "@/lib/quant-types";
-import { sectorColor } from "@/lib/sectors";
+import { sectorColor, sectorInk } from "@/lib/sectors";
 
 // The "analytical dashboard" strip from the reference: small cards, each a mini line chart with a
 // big headline number. Here they surface the leaders in the current screen.
@@ -26,12 +26,13 @@ export function AnalyticalCards({ assets }: { assets: AssetStats[] }) {
   return (
     <div className="grid grid-cols-2 gap-2.5 md:grid-cols-4">
       {top.map((a) => {
-        const color = sectorColor(a.sector);
+        const color = sectorColor(a.sector);   // stroke
+        const ink = sectorInk(a.sector);       // label
         return (
           <div key={a.symbol} className="panel px-3 py-2.5">
             <div className="mb-1 flex items-center justify-between">
               <span className="mono text-[12px] font-semibold text-text">{a.symbol}</span>
-              <span className="label" style={{ color }}>{a.sector}</span>
+              <span className="label" style={{ color: ink }}>{a.sector}</span>
             </div>
             <Line series={a.series} color={color} />
             <div className="mt-1.5 flex items-end justify-between">

@@ -167,6 +167,7 @@ export async function getUniverse(force = false): Promise<UniverseData> {
       beta,
       series: ds.map((x) => x.c),
       dates: ds.map((x) => x.d),
+      daily: { dates: s.dates, close: s.close },
       ohlc: bars,
       advUsd: advUsd(s),
       spreadBps: spreadBps(s),

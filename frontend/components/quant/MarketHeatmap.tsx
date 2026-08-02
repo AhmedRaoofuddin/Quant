@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { AssetStats } from "@/lib/quant-types";
-import { sectorColor } from "@/lib/sectors";
+import { sectorColor, sectorInk } from "@/lib/sectors";
 
 // Market return heatmap: rows are assets (grouped by sector), columns are recent periods, each
 // cell coloured by that period's return. The real-data analog of a market pulse grid.
@@ -34,7 +34,7 @@ export function MarketHeatmap({ assets }: { assets: AssetStats[] }) {
           for (let i = 1; i < s.length; i++) rets.push(s[i] / s[i - 1] - 1);
           return (
             <div key={a.symbol} className="flex items-center gap-1.5 py-[1px]" onMouseEnter={() => setHover(a.symbol)}>
-              <span className="w-11 shrink-0 mono text-[9.5px]" style={{ color: sectorColor(a.sector) }}>{a.symbol}</span>
+              <span className="w-11 shrink-0 mono text-[9.5px]" style={{ color: sectorInk(a.sector) }}>{a.symbol}</span>
               <div className="flex flex-1 gap-[1px]">
                 {rets.map((r, i) => <div key={i} className="h-[9px] flex-1 rounded-[1px]" style={{ backgroundColor: color(r) }} title={`${a.symbol} ${(r * 100).toFixed(1)}%`} />)}
               </div>

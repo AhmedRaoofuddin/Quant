@@ -5,11 +5,27 @@ import type { StrategyResult } from "@/lib/strategies";
 import { fmtNumber, fmtPercent } from "@/lib/format";
 import { Panel, MetricBar, Readout, SectionHead } from "@/components/Panel";
 import { CompanyLogo } from "@/components/CompanyLogo";
+import { JointCapacity } from "@/components/JointCapacity";
+import { Attribution } from "@/components/Attribution";
+import type { PortfolioReport } from "@/lib/portfolio";
+import type { Attribution as Attr } from "@/lib/attribution";
+import type { RegimePerformance } from "@/lib/regime-perf";
+
+type Enriched = StrategyResult & {
+  psr: number;
+  trials: number;
+  attribution: Attr | null;
+  regime: RegimePerformance | null;
+};
 
 interface Payload {
   asOf: string;
-  strategies: (StrategyResult & { psr: number; trials: number })[];
+  periodsPerYear: number;
+  strategies: Enriched[];
   family: { pbo: number; lambdas: number[]; nCombinations: number; bestId: string; nStrategies: number; verdict: string };
+  portfolio: PortfolioReport | null;
+  factorPanel: { keys: string[]; nObs: number; annReturns: Record<string, number>; missing: string[] };
+  regimeModel: { labels: string[]; currentState: number; stationary: number[]; expectedDuration: number[] } | null;
 }
 
 const usd = (v: number) =>
@@ -18,7 +34,11 @@ const usd = (v: number) =>
 /** Compact form for a figure that only pinned to the sweep bound, so it stays inside its column. */
 const beyond = (v: number) => `> $${v >= 1e9 ? `${Math.round(v / 1e9)}B` : `${Math.round(v / 1e6)}M`}`;
 
-const PALETTE = ["#0B2D43", "#4E7CA1", "#3d8361", "#AD833B", "#B0413A", "#5C6B75"];
+// One hue per family, so the equity chart groups by kind rather than cycling arbitrarily.
+const FAMILY_COLOUR: Record<string, string> = {
+  momentum: "#0B2D43", reversal: "#B0413A", volatility: "#4E7CA1",
+  trend: "#3d8361", liquidity: "#AD833B", seasonality: "#7A5C8F", quality: "#5C6B75",
+};
 
 export function Strategies() {
   const [d, setD] = useState<Payload | null>(null);
@@ -34,7 +54,7 @@ export function Strategies() {
 
   const colours = useMemo(() => {
     const m: Record<string, string> = {};
-    d?.strategies.forEach((s, i) => { m[s.id] = PALETTE[i % PALETTE.length]; });
+    d?.strategies.forEach((s) => { m[s.id] = FAMILY_COLOUR[s.family] ?? "#5C6B75"; });
     return m;
   }, [d]);
 
@@ -50,10 +70,10 @@ export function Strategies() {
       <SectionHead
         title="Strategy Library"
         sub={`${d.strategies.length} factor strategies backtested on live data, each with its own capacity`}
-        right={<span className={`rounded-[2px] border px-2 py-1 mono text-[11px] font-bold ${
-          d.family.verdict === "robust" ? "border-up/50 bg-up/10 text-up"
-          : d.family.verdict === "overfit" ? "border-down/50 bg-down/10 text-down"
-          : "border-warn/50 bg-warn/10 text-warn"}`}>
+        right={<span className={`badge ${
+          d.family.verdict === "robust" ? "badge-pos"
+          : d.family.verdict === "overfit" ? "badge-neg"
+          : "badge-warn"}`}>
           FAMILY PBO {fmtPercent(d.family.pbo, 0)} · {d.family.verdict.toUpperCase()}
         </span>}
       />
@@ -81,7 +101,7 @@ export function Strategies() {
         <table className="grid-table">
           <thead>
             <tr>
-              <th>Strategy</th><th>Sharpe</th><th>Ann ret</th><th>Vol</th><th>Max DD</th>
+              <th>Strategy</th><th>Family</th><th>Sharpe</th><th>Alpha t</th><th>Ann ret</th><th>Vol</th><th>Max DD</th>
               <th>Turnover</th><th>PSR</th><th>Deployable</th><th>Binds</th>
             </tr>
           </thead>
@@ -94,7 +114,12 @@ export function Strategies() {
                     <span className="font-medium text-text">{s.name}</span>
                   </span>
                 </td>
+                <td className="text-right mono text-[11px] uppercase text-faint">{s.family}</td>
                 <td className={`text-right mono font-medium ${s.grossSharpe > 1 ? "up" : "text-text"}`}>{fmtNumber(s.grossSharpe)}</td>
+                <td className={`text-right mono ${
+                  s.attribution && Math.abs(s.attribution.alphaT) >= 2 ? "up font-medium" : "text-faint"}`}>
+                  {s.attribution ? fmtNumber(s.attribution.alphaT) : "n/a"}
+                </td>
                 <td className={`text-right mono ${s.grossAnnReturn >= 0 ? "up" : "down"}`}>{fmtPercent(s.grossAnnReturn, 0)}</td>
                 <td className="text-right mono text-muted">{fmtPercent(s.annVol, 0)}</td>
                 <td className="text-right mono text-down">{fmtPercent(s.maxDrawdown, 0)}</td>
@@ -115,6 +140,14 @@ export function Strategies() {
         <Panel title={sel.name} accent="blue" right={`${sel.holdings} names`}>
           <div className="flex h-full flex-col">
             <p className="text-[12.5px] leading-relaxed text-muted">{sel.thesis}</p>
+            {sel.reference && (
+              <p className="mt-1.5 mono text-[11px] text-faint">{sel.reference}</p>
+            )}
+            {sel.caveat && (
+              <p className="mt-2 border-l-2 border-warn/60 pl-2.5 text-[11.5px] leading-relaxed text-warn">
+                {sel.caveat}
+              </p>
+            )}
 
             <dl className="mt-2.5 grid grid-cols-2 gap-x-5 border-t border-line pt-2.5">
               <Stat k="Rebalance" v={`${sel.rebalanceEvery} periods`} />
@@ -146,6 +179,25 @@ export function Strategies() {
             </div>
           </div>
         </Panel>
+      </div>
+
+      {d.portfolio && (
+        <div className="border-t border-line pt-4">
+          <JointCapacity p={d.portfolio} />
+        </div>
+      )}
+
+      <div className="border-t border-line pt-4">
+        <Attribution
+          strategies={d.strategies.map((s) => ({
+            id: s.id, name: s.name, family: s.family,
+            grossAnnReturn: s.grossAnnReturn, grossSharpe: s.grossSharpe,
+            caveat: s.caveat, reference: s.reference,
+            attribution: s.attribution, regime: s.regime,
+          }))}
+          factorPanel={d.factorPanel}
+          regimeModel={d.regimeModel}
+        />
       </div>
     </div>
   );

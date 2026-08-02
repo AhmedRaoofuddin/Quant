@@ -14,6 +14,15 @@ export interface AssetStats {
   ohlc: { d: string; o: number; h: number; l: number; c: number }[]; // downsampled bars for candlesticks
   advUsd: number;      // average daily traded value in USD, the liquidity input to capacity
   spreadBps: number;   // estimated quoted spread in basis points (Corwin-Schultz style proxy)
+  /**
+   * Undownsampled daily closes, for statistics rather than charts.
+   *
+   * `series` above is thinned to 260 points to keep chart payloads small, which is fine for a
+   * line but starves every statistic downstream: on 260 bars the regime model finds barely a
+   * dozen turbulent observations and a per-regime Sharpe on that is noise. Analytics read this
+   * field instead. It is stripped at the /api/universe boundary so it never crosses the wire.
+   */
+  daily?: { dates: string[]; close: number[] };
 }
 
 export interface UniverseData {

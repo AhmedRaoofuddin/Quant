@@ -18,16 +18,28 @@
   --border-strong: 190 201 209;
 
   --text: 19 37 47;           /* #13252F deep navy ink */
-  --muted: 92 107 117;        /* #5C6B75 */
-  --faint: 128 142 151;
+  --muted: 78 92 102;         /* #4E5C66, from #5C6B75: the old value dipped under AA on tinted panels */
+  /* Was 128 142 151, which measures 3.37:1 on the card surface and fails WCAG AA. It is used for
+     real data (t-statistics, observation counts, factor betas), not just decoration, so it has to
+     clear 4.5:1. This keeps the same blue-grey hue at the darkest value that still reads as
+     de-emphasised next to --muted. */
+  --faint: 90 100 110;
 
   --accent: 11 45 67;         /* #0B2D43 deep navy, the single accent */
   --accent-soft: 232 243 255; /* #E8F3FF pale blue tint */
 
   /* Semantic P&L. Muted, institutional, never neon. */
-  --up: 61 131 97;            /* #3d8361 */
-  --down: 176 65 58;          /* #B0413A */
-  --warn: 173 131 59;         /* #AD833B muted gold */
+  /* --up was 61 131 97, which clears AA on plain white but drops to 3.97:1 over the selected-row
+     tint, and it carries the positive numbers in every table. Deepened to pass on both surfaces. */
+  --up: 46 104 77;            /* #2E684D */
+  --down: 176 65 58;          /* #B0413A, measures 5.0:1 on the tinted row */
+  --warn: 132 98 36;          /* #846224, deepened from #AD833B to clear AA as body text */
+
+  /* Text sitting on a 10% tint of its own hue needs to be darker than the hue itself, otherwise
+     the chip loses roughly a point of contrast against the plain-white case. */
+  --up-ink: 38 88 65;
+  --down-ink: 138 46 41;
+  --warn-ink: 112 82 27;
 
   /* Categorical series, navy-led and de-saturated. */
   --series-1: 11 45 67;
@@ -165,6 +177,18 @@ table.grid-table tbody tr, table.blotter tbody tr, .grid-row { transition: backg
 table.grid-table tbody tr:hover, table.blotter tbody tr:hover, .grid-row:hover {
   background-color: rgb(var(--accent) / 0.05);
 }
+
+/* Status chip: coloured text on a tint of the same hue, using the darker ink variant so the
+   pairing still clears WCAG AA. */
+.badge {
+  display: inline-block; border-radius: 2px; border-width: 1px; border-style: solid;
+  padding: 4px 8px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+}
+.badge-pos  { border-color: rgb(var(--up) / 0.5);   background: rgb(var(--up) / 0.10);   color: rgb(var(--up-ink)); }
+.badge-neg  { border-color: rgb(var(--down) / 0.5); background: rgb(var(--down) / 0.10); color: rgb(var(--down-ink)); }
+.badge-warn { border-color: rgb(var(--warn) / 0.5); background: rgb(var(--warn) / 0.10); color: rgb(var(--warn-ink)); }
 
 /* --- Controls ------------------------------------------------------------- */
 .chip {
