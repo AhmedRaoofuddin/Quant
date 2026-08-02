@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Alpha-Forge: capacity-aware quantitative research">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2D43"/>
+      <stop offset="55%" stop-color="#103A56"/>
+      <stop offset="100%" stop-color="#0A2436"/>
+    </linearGradient>
+    <linearGradient id="curve" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4E7CA1"/>
+      <stop offset="62%" stop-color="#7FA8C4"/>
+      <stop offset="100%" stop-color="#B0413A"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1280" height="300" rx="6"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="300" fill="url(#paper)"/>
+
+    <!-- hairline grid: quiet, technical, not decorative -->
+    <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+      <path d="M0 75h1280M0 150h1280M0 225h1280"/>
+      <path d="M160 0v300M320 0v300M480 0v300M640 0v300M800 0v300M960 0v300M1120 0v300"/>
+    </g>
+
+    <!-- the capacity curve: net alpha rises, peaks, then dies as size grows -->
+    <path d="M700 250 C 800 232, 880 196, 950 168 C 1010 145, 1058 128, 1100 128
+             C 1145 128, 1185 150, 1215 190 C 1238 220, 1252 240, 1264 252"
+          fill="none" stroke="url(#curve)" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="1100" cy="128" r="5" fill="#7FA8C4"/>
+    <text x="1100" y="112" text-anchor="middle" fill="#9FBCD6"
+          font-family="Consolas, ui-monospace, monospace" font-size="13">peak net P&amp;L</text>
+    <text x="1264" y="272" text-anchor="end" fill="#C4756E"
+          font-family="Consolas, ui-monospace, monospace" font-size="13">alpha dies</text>
+    <text x="706" y="272" fill="#7f97a8"
+          font-family="Consolas, ui-monospace, monospace" font-size="13">capital deployed</text>
+
+    <!-- wordmark -->
+    <text x="72" y="132" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif"
+          font-size="62" letter-spacing="-1">Alpha-Forge</text>
+    <rect x="74" y="150" width="58" height="3" fill="#4E7CA1"/>
+    <text x="74" y="186" fill="#C8D7E2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20">
+      Every backtest answers &quot;how good?&quot;. This one answers &quot;how much?&quot;
+    </text>
+    <text x="74" y="228" fill="#7f97a8" font-family="Consolas, ui-monospace, monospace" font-size="15">
+      strategy capacity  ·  overfitting firewall  ·  C++20 engine  ·  Claude Skills
+    </text>
+  </g>
+</svg>

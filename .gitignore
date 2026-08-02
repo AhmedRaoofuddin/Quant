@@ -1,0 +1,37 @@
+# Build artifacts
+backend/build/
+build/
+*.o
+*.obj
+*.a
+*.exe
+
+# Data & runtime
+data/
+# Runtime cache of fetched market data. Not redistributed: see LICENSE.
+frontend/.cache/
+test_tmp_data*/
+*.duckdb
+
+# Node / Next
+node_modules/
+.next/
+out/
+
+# Env & secrets
+.env
+.env.local
+.env*.local
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Video production intermediates (frames render to TEMP; only the MP4 is committed)
+media/frames/
+media/vo/*.wav

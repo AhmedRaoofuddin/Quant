@@ -1,0 +1,58 @@
+{
+  "title": "Alpha-Forge product overview",
+  "voice": "Microsoft Zira Desktop",
+  "rate": -1,
+  "notes": "Scene durations come from measuring each rendered WAV, not from guessing at word counts.",
+  "scenes": [
+    {
+      "id": "hook",
+      "vo": "Every backtest answers the same question. How good is this strategy? Almost none of them answer the one that decides whether it gets funded.",
+      "beat": "title"
+    },
+    {
+      "id": "problem",
+      "vo": "How much money can it actually run? Here are two strategies measured on the same universe. Short term reversal posts a Sharpe ratio of one point three two. Low volatility posts zero point nine four.",
+      "beat": "compare"
+    },
+    {
+      "id": "twist",
+      "vo": "Reversal wins the number everyone publishes. But it trades over thirty one times a year, and it runs out of room at eight hundred and eighty five million dollars. Low volatility holds one point two eight billion. At size, the second one is the better business.",
+      "beat": "capacity"
+    },
+    {
+      "id": "law",
+      "vo": "That is the square root law of market impact. Profit grows in line with capital. Trading cost grows with the square root of it. So net profit rises, peaks, and then dies. Alpha-Forge solves for exactly where.",
+      "beat": "curve"
+    },
+    {
+      "id": "product",
+      "vo": "All of it runs in one terminal. Eleven pages, built on live prices. Screen the universe, compare a family of strategies, and read the capacity of each one next to its Sharpe, where the trade off is impossible to miss.",
+      "beat": "ui"
+    },
+    {
+      "id": "firewall",
+      "vo": "Capacity is only half the answer. A strategy also has to be real. The firewall runs probability of backtest overfitting, deflated Sharpe, and a Holm haircut across every variant you tried.",
+      "beat": "firewall"
+    },
+    {
+      "id": "proof",
+      "vo": "Point it at eight series of pure random noise, and it comes back with ninety seven percent. Overfit. That is the right answer, and it is the test that matters.",
+      "beat": "noise"
+    },
+    {
+      "id": "skills",
+      "vo": "All three engines ship as Claude skills you can install. Plain Node. No dependencies, no server, no keys. Copy a folder, and Claude can size a book, check a backtest, or build a set of strategies for you.",
+      "beat": "skills"
+    },
+    {
+      "id": "data",
+      "vo": "Every source is open and needs no key. Seventy eight equities, thirty six cross asset instruments, filings, macro series and news feeds. Company marks come from Wikidata.",
+      "beat": "logos"
+    },
+    {
+      "id": "close",
+      "vo": "Thirteen thousand lines of C plus plus and TypeScript. Fifty one tests. Alpha-Forge. Because a Sharpe ratio with no capacity is only half a result.",
+      "beat": "outro"
+    }
+  ]
+}

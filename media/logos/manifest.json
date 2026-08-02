@@ -1,0 +1,258 @@
+[
+  {
+    "qid": "Q312",
+    "label": "Apple Inc.",
+    "file": "Apple logo black.svg",
+    "ticker": "AAPL",
+    "bytes": 9583,
+    "source": "https://commons.wikimedia.org/wiki/File:Apple logo black.svg"
+  },
+  {
+    "qid": "Q2283",
+    "label": "Microsoft",
+    "file": "Microsoft logo (2012).svg",
+    "ticker": "MSFT",
+    "bytes": 8939,
+    "source": "https://commons.wikimedia.org/wiki/File:Microsoft logo (2012).svg"
+  },
+  {
+    "qid": "Q182477",
+    "label": "Nvidia",
+    "file": "NVIDIA logo.svg",
+    "ticker": "NVDA",
+    "bytes": 9071,
+    "source": "https://commons.wikimedia.org/wiki/File:NVIDIA logo.svg"
+  },
+  {
+    "qid": "Q20800404",
+    "label": "Alphabet Inc.",
+    "file": "Alphabet Inc Logo 2015.svg",
+    "ticker": "GOOGL",
+    "bytes": 6316,
+    "source": "https://commons.wikimedia.org/wiki/File:Alphabet Inc Logo 2015.svg"
+  },
+  {
+    "qid": "Q3884",
+    "label": "Amazon",
+    "file": "Amazon 2024.svg",
+    "ticker": "AMZN",
+    "bytes": 15400,
+    "source": "https://commons.wikimedia.org/wiki/File:Amazon 2024.svg"
+  },
+  {
+    "qid": "Q380",
+    "label": "Meta",
+    "file": "Meta Platforms Inc. logo.svg",
+    "ticker": "META",
+    "bytes": 12750,
+    "source": "https://commons.wikimedia.org/wiki/File:Meta Platforms Inc. logo.svg"
+  },
+  {
+    "qid": "Q478214",
+    "label": "Tesla",
+    "file": "Tesla Motors.svg",
+    "ticker": "TSLA",
+    "bytes": 17740,
+    "source": "https://commons.wikimedia.org/wiki/File:Tesla Motors.svg"
+  },
+  {
+    "qid": "Q192314",
+    "label": "JPMorgan Chase",
+    "file": "Logo of JPMorganChase 2024.svg",
+    "ticker": "JPM",
+    "bytes": 7264,
+    "source": "https://commons.wikimedia.org/wiki/File:Logo of JPMorganChase 2024.svg"
+  },
+  {
+    "qid": "Q193326",
+    "label": "Goldman Sachs",
+    "file": "Goldman Sachs logo.svg",
+    "ticker": "GS",
+    "bytes": 11122,
+    "source": "https://commons.wikimedia.org/wiki/File:Goldman Sachs logo.svg"
+  },
+  {
+    "qid": "Q334204",
+    "label": "Morgan Stanley",
+    "file": "Morgan Stanley Logo 2024.png",
+    "ticker": "MS",
+    "bytes": 8649,
+    "source": "https://commons.wikimedia.org/wiki/File:Morgan Stanley Logo 2024.png"
+  },
+  {
+    "qid": "Q328840",
+    "label": "Visa Inc.",
+    "file": "Visa Inc. logo (2021\u2013present).svg",
+    "ticker": "V",
+    "bytes": 13443,
+    "source": "https://commons.wikimedia.org/wiki/File:Visa Inc. logo (2021\u2013present).svg"
+  },
+  {
+    "qid": "Q489921",
+    "label": "Mastercard",
+    "file": "Mastercard 2019 logo.svg",
+    "ticker": "MA",
+    "bytes": 12309,
+    "source": "https://commons.wikimedia.org/wiki/File:Mastercard 2019 logo.svg"
+  },
+  {
+    "qid": "Q333718",
+    "label": "Johnson & Johnson",
+    "file": "JNJ Logo New.svg",
+    "ticker": "JNJ",
+    "bytes": 9946,
+    "source": "https://commons.wikimedia.org/wiki/File:JNJ Logo New.svg"
+  },
+  {
+    "qid": "Q206921",
+    "label": "Pfizer",
+    "file": "Pfizer (2021).svg",
+    "ticker": "PFE",
+    "bytes": 16433,
+    "source": "https://commons.wikimedia.org/wiki/File:Pfizer (2021).svg"
+  },
+  {
+    "qid": "Q247489",
+    "label": "Merck & Co.",
+    "file": "Merck Logo.svg",
+    "ticker": "MRK",
+    "bytes": 11154,
+    "source": "https://commons.wikimedia.org/wiki/File:Merck Logo.svg"
+  },
+  {
+    "qid": "Q156238",
+    "label": "ExxonMobil",
+    "file": "Exxon Mobil Logo.svg",
+    "ticker": "XOM",
+    "bytes": 10410,
+    "source": "https://commons.wikimedia.org/wiki/File:Exxon Mobil Logo.svg"
+  },
+  {
+    "qid": "Q319642",
+    "label": "Chevron Corporation",
+    "file": "Chevron Logo.svg",
+    "ticker": "CVX",
+    "bytes": 24943,
+    "source": "https://commons.wikimedia.org/wiki/File:Chevron Logo.svg"
+  },
+  {
+    "qid": "Q483551",
+    "label": "Walmart",
+    "file": "Walmart logo (2025).svg",
+    "ticker": "WMT",
+    "bytes": 5697,
+    "source": "https://commons.wikimedia.org/wiki/File:Walmart logo (2025).svg"
+  },
+  {
+    "qid": "Q3295867",
+    "label": "The Coca-Cola Company",
+    "file": "The Coca-Cola Company (2020).svg",
+    "ticker": "KO",
+    "bytes": 18532,
+    "source": "https://commons.wikimedia.org/wiki/File:The Coca-Cola Company (2020).svg"
+  },
+  {
+    "qid": "Q38076",
+    "label": "McDonald's",
+    "file": "McDonald's with slogan 2020.svg",
+    "ticker": "MCD",
+    "bytes": 18909,
+    "source": "https://commons.wikimedia.org/wiki/File:McDonald's with slogan 2020.svg"
+  },
+  {
+    "qid": "Q483915",
+    "label": "Nike",
+    "file": "Logo NIKE.svg",
+    "ticker": "NKE",
+    "bytes": 3860,
+    "source": "https://commons.wikimedia.org/wiki/File:Logo NIKE.svg"
+  },
+  {
+    "qid": "Q459965",
+    "label": "Caterpillar Inc.",
+    "file": "Caterpillar logo.svg",
+    "ticker": "CAT",
+    "bytes": 5804,
+    "source": "https://commons.wikimedia.org/wiki/File:Caterpillar logo.svg"
+  },
+  {
+    "qid": "Q66",
+    "label": "Boeing",
+    "file": "Boeing full logo.svg",
+    "ticker": "BA",
+    "bytes": 5844,
+    "source": "https://commons.wikimedia.org/wiki/File:Boeing full logo.svg"
+  },
+  {
+    "qid": "Q54173",
+    "label": "General Electric",
+    "file": "General Electric logo.svg",
+    "ticker": "GE",
+    "bytes": 55043,
+    "source": "https://commons.wikimedia.org/wiki/File:General Electric logo.svg"
+  },
+  {
+    "qid": "Q7414",
+    "label": "The Walt Disney Company",
+    "file": "The Walt Disney Company Logo.svg",
+    "ticker": "DIS",
+    "bytes": 15919,
+    "source": "https://commons.wikimedia.org/wiki/File:The Walt Disney Company Logo.svg"
+  },
+  {
+    "qid": "Q907311",
+    "label": "Netflix",
+    "file": "Netflix 2015 logo.svg",
+    "ticker": "NFLX",
+    "bytes": 4126,
+    "source": "https://commons.wikimedia.org/wiki/File:Netflix 2015 logo.svg"
+  },
+  {
+    "qid": "Q248",
+    "label": "Intel",
+    "file": "Intel logo 2023.svg",
+    "ticker": "INTC",
+    "bytes": 8603,
+    "source": "https://commons.wikimedia.org/wiki/File:Intel logo 2023.svg"
+  },
+  {
+    "qid": "Q128896",
+    "label": "AMD",
+    "file": "AMD Logo.svg",
+    "ticker": "AMD",
+    "bytes": 4575,
+    "source": "https://commons.wikimedia.org/wiki/File:AMD Logo.svg"
+  },
+  {
+    "qid": "Q37156",
+    "label": "IBM",
+    "file": "IBM logo.svg",
+    "ticker": "IBM",
+    "bytes": 3702,
+    "source": "https://commons.wikimedia.org/wiki/File:IBM logo.svg"
+  },
+  {
+    "qid": "Q19900",
+    "label": "Oracle Corporation",
+    "file": "Oracle logo.svg",
+    "ticker": "ORCL",
+    "bytes": 8878,
+    "source": "https://commons.wikimedia.org/wiki/File:Oracle logo.svg"
+  },
+  {
+    "qid": "Q11463",
+    "label": "Adobe",
+    "file": "Adobe Corporate wordmark.svg",
+    "ticker": "ADBE",
+    "bytes": 6152,
+    "source": "https://commons.wikimedia.org/wiki/File:Adobe Corporate wordmark.svg"
+  },
+  {
+    "qid": "Q713418",
+    "label": "TSMC",
+    "file": "TSMC wordmark.svg",
+    "ticker": "TSM",
+    "bytes": 11527,
+    "source": "https://commons.wikimedia.org/wiki/File:TSMC wordmark.svg"
+  }
+]

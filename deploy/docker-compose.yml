@@ -1,0 +1,43 @@
+# Local full-stack: C++ backend (REST) + Next.js frontend.
+# Supabase runs separately via the CLI: `supabase start` (see supabase/config.toml).
+#
+#   docker compose -f deploy/docker-compose.yml up --build
+#
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend.Dockerfile
+    image: alpha-forge/backend:latest
+    environment:
+      AF_ENVIRONMENT: ${AF_ENVIRONMENT:-development}
+      AF_LOG_JSON: "true"
+      AF_LLM_OFFLINE: ${AF_LLM_OFFLINE:-true}
+      AF_ANTHROPIC_API_KEY: ${AF_ANTHROPIC_API_KEY:-}
+      # To use Supabase from the host: AF_RUN_STORE=postgres and point AF_DB_URL at it.
+      AF_RUN_STORE: ${AF_RUN_STORE:-file}
+      AF_DB_URL: ${AF_DB_URL:-}
+    ports:
+      - "8000:8000"
+    volumes:
+      - af_data:/app/data
+    healthcheck:
+      test: ["CMD", "alphaforge", "list"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/frontend.Dockerfile
+    image: alpha-forge/frontend:latest
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  af_data:

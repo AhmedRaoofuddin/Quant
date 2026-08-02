@@ -1,0 +1,11 @@
+**/build
+**/node_modules
+**/.next
+**/out
+**/data
+**/test_tmp_data*
+**/.git
+**/.env*
+**/*.exe
+**/*.o
+**/*.a

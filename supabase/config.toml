@@ -1,0 +1,37 @@
+# Alpha-Forge local Supabase configuration.
+# Start the stack with:  supabase start   (requires Docker Desktop)
+# Studio:   http://localhost:54323
+# DB (Postgres, direct/libpq):  postgresql://postgres:postgres@127.0.0.1:54322/postgres
+# API (PostgREST / Auth):       http://127.0.0.1:54321
+
+project_id = "alpha-forge"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "alphaforge"]
+extra_search_path = ["public", "alphaforge"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+[storage]
+enabled = true
