@@ -34,7 +34,7 @@ not "how good is this strategy?" but "how much money can it actually run?"**
 
 <video src="https://github.com/AhmedRaoofuddin/Quant/raw/main/media/alpha-forge.mp4" controls width="100%"></video>
 
-**[Watch: media/alpha-forge.mp4](media/alpha-forge.mp4)**  ·  narrated overview, 2 min 17 s
+**[Watch: media/alpha-forge.mp4](media/alpha-forge.mp4)**  ·  narrated overview, 2 min 40 s
 
 <sub>If the player does not load, GitHub is serving the file as a download. Click the link above.</sub>
 
@@ -71,6 +71,38 @@ Reversal leads on Sharpe at 1.32 and still carries the least capital.</sub>
 <tr>
 <td><sub><b>Screener</b>  ·  78 equities ranked on live analytics.</sub></td>
 <td><sub><b>Factors</b>  ·  pairwise correlation and effective breadth.</sub></td>
+</tr>
+</table>
+
+### The quant toolkit
+
+Priced on real data, not toy series.
+
+<div align="center">
+
+<img src="media/ui/candles.png" alt="Candlesticks, GBM Monte Carlo, return distribution and option greeks" width="100%">
+
+<sub><b>Candlesticks</b> on real OHLC, a <b>geometric Brownian motion Monte Carlo</b> with 5th, median
+and 95th percentile paths, the <b>return distribution</b> against a fitted Normal with the 95% VaR
+marked, and <b>Black-Scholes greeks</b> priced off realised volatility.</sub>
+
+<br><br>
+
+<img src="media/ui/surface.png" alt="Volatility surface and risk-return map" width="100%">
+
+<sub><b>Volatility surface</b>, rolling annualised vol across names and time, rotatable by azimuth and
+elevation. <b>Risk / return map</b> with sector ellipses and the Sharpe = 1 line.</sub>
+
+</div>
+
+<table>
+<tr>
+<td width="50%"><img src="media/ui/distributions.png" alt="Sharpe, return, volatility and beta distributions" width="100%"></td>
+<td width="50%"><img src="media/ui/blackscholes.png" alt="Black-Scholes call surface" width="100%"></td>
+</tr>
+<tr>
+<td><sub><b>Distributions</b>  ·  Sharpe, return, volatility and beta across the universe.</sub></td>
+<td><sub><b>Black-Scholes</b>  ·  greeks and the call surface.</sub></td>
 </tr>
 </table>
 

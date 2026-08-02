@@ -511,6 +511,69 @@ def sc_ui(layer, t, d, shots):
                       fill=alpha(ACCENT_HI if on else LINE, 1.0))
 
 
+def sc_charts(layer, t, d, shots):
+    """
+    The quant charts, held one at a time.
+
+    Unlike the page shots these are clipped to their cards, so aspect ratios range from a tall
+    stack of distributions to a wide surface. Each is fitted inside a fixed stage rather than
+    cropped, which keeps a whole chart on screen instead of a slice of one.
+    """
+    eyebrow(layer, (170, 132), "priced on real data, not toy series")
+    text(layer, (170, 164), "The quant toolkit", SERIF_B(54), INK, ease_out(t / 0.6))
+
+    labels = {
+        "candles": "Candlesticks and GBM Monte Carlo  ·  real OHLC, 1-year projection",
+        "surface": "Volatility surface  ·  rolling annualised vol across names and time",
+        "blackscholes": "Black-Scholes  ·  greeks and call surface on realised volatility",
+        "distributions": "Distributions  ·  Sharpe, return, volatility and beta across the universe",
+        "correlation": "Correlation matrix  ·  cross-asset pairwise returns",
+    }
+    order = ["candles", "surface", "blackscholes", "distributions", "correlation"]
+    seq = [(n, shots[n]) for n in order if n in shots]
+    if not seq:
+        return
+
+    hold = (d - 0.5) / len(seq)
+    idx = min(int(t / hold), len(seq) - 1)
+    local = t - idx * hold
+    name, img = seq[idx]
+
+    fade = min(ease_out(local / 0.42), ease_out((hold - local) / 0.38))
+    if fade <= 0.02:
+        return
+
+    stage_w, stage_h = 1500, 620
+
+    # Fit to the stage *width*, not the whole stage. Fitting both dimensions shrinks a tall shot
+    # like the candlestick-plus-Monte-Carlo stack to under half size and the labels stop being
+    # readable, which defeats the point of showing it. Anything taller than the stage pans.
+    # The upscale is capped so a small card is not blown up into a soft mess.
+    scale = min(stage_w / img.width, 1.25) * (1.0 + 0.025 * (local / hold))
+    im = img.resize((max(1, int(img.width * scale)), max(1, int(img.height * scale))), Image.LANCZOS)
+
+    if im.height > stage_h:
+        oy = int((im.height - stage_h) * ease_in_out(clamp(local / hold)))
+        im = im.crop((0, oy, im.width, oy + stage_h))
+    if im.width > stage_w:
+        ox = (im.width - stage_w) // 2
+        im = im.crop((ox, 0, ox + stage_w, im.height))
+
+    x = (W - im.width) // 2
+    y = 246 + (stage_h - im.height) // 2
+    if fade < 1:
+        im = Image.blend(Image.new("RGB", im.size, BG_BOT), im.convert("RGB"), fade)
+    layer._img.paste(im.convert("RGB"), (x, y))
+    layer.rectangle([x - 1, y - 1, x + im.width, y + im.height],
+                    outline=alpha(ACCENT, fade * 0.5), width=2)
+
+    text(layer, (W // 2, 890), labels.get(name, name), MONO(23), ACCENT_HI, fade, anchor="ma")
+    for i in range(len(seq)):
+        cx = W // 2 - (len(seq) - 1) * 13 + i * 26
+        layer.ellipse([cx - 4, 926, cx + 4, 934],
+                      fill=alpha(ACCENT_HI if i == idx else LINE, 1.0))
+
+
 def sc_outro(layer, t, d):
     cx = W // 2
     stats = [("13,267", "lines of C++20 and TypeScript"),
@@ -628,6 +691,8 @@ def main():
                 sc_logos(layer, t, d, logos)
             elif m["beat"] == "ui":
                 sc_ui(layer, t, d, shots)
+            elif m["beat"] == "charts":
+                sc_charts(layer, t, d, shots)
             elif RENDER.get(m["beat"]):
                 RENDER[m["beat"]](layer, t, d)
 

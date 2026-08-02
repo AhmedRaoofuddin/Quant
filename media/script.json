@@ -30,6 +30,11 @@
       "beat": "ui"
     },
     {
+      "id": "charts",
+      "vo": "The quant toolkit sits alongside it. Candlesticks on real open, high, low and close. A geometric Brownian motion Monte Carlo with five and ninety five percent bands. Black Scholes greeks priced off realised volatility. A rotating volatility surface, and return distributions fitted against a normal so you can see the fat tails.",
+      "beat": "charts"
+    },
+    {
       "id": "firewall",
       "vo": "Capacity is only half the answer. A strategy also has to be real. The firewall runs probability of backtest overfitting, deflated Sharpe, and a Holm haircut across every variant you tried.",
       "beat": "firewall"

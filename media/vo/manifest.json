@@ -2,7 +2,7 @@
   {
     "id": "hook",
     "beat": "title",
-    "seconds": 9.672,
+    "seconds": 9.648,
     "audio": "vo/hook.mp3"
   },
   {
@@ -20,7 +20,7 @@
   {
     "id": "law",
     "beat": "curve",
-    "seconds": 15.168,
+    "seconds": 14.928,
     "audio": "vo/law.mp3"
   },
   {
@@ -30,15 +30,21 @@
     "audio": "vo/product.mp3"
   },
   {
+    "id": "charts",
+    "beat": "charts",
+    "seconds": 22.848,
+    "audio": "vo/charts.mp3"
+  },
+  {
     "id": "firewall",
     "beat": "firewall",
-    "seconds": 13.464,
+    "seconds": 13.872,
     "audio": "vo/firewall.mp3"
   },
   {
     "id": "proof",
     "beat": "noise",
-    "seconds": 11.304,
+    "seconds": 11.232,
     "audio": "vo/proof.mp3"
   },
   {
@@ -50,7 +56,7 @@
   {
     "id": "data",
     "beat": "logos",
-    "seconds": 12.744,
+    "seconds": 12.72,
     "audio": "vo/data.mp3"
   },
   {
