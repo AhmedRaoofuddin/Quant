@@ -42,16 +42,20 @@ def main():
     listing = os.path.join(FRAMES, "audio.txt")
     with open(listing, "w", encoding="utf-8") as f:
         for m in manifest:
-            p = os.path.join(VO, f"{m['id']}.wav").replace("\\", "/")
+            p = os.path.join(HERE, m.get("audio", f"vo/{m['id']}.mp3")).replace("\\", "/")
+            if not os.path.exists(p):
+                print(f"missing narration: {p}\nRun synth_vo.py first.")
+                sys.exit(1)
             f.write(f"file '{p}'\n")
 
     voice = os.path.join(FRAMES, "voice.wav")
     print("concatenating narration...")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
          "-f", "concat", "-safe", "0", "-i", listing,
-         # Light mastering: high-pass off the rumble, gentle compression, normalise to broadcast.
-         "-af", "highpass=f=85,acompressor=threshold=-18dB:ratio=3:attack=8:release=180,"
-                "loudnorm=I=-16:TP=-1.5:LRA=11",
+         # The neural voice is already clean and evenly levelled, so this only trims sub-bass and
+         # sets broadcast loudness. Heavy compression here would flatten its natural dynamics,
+         # which is exactly the quality worth keeping.
+         "-af", "highpass=f=70,loudnorm=I=-16:TP=-1.5:LRA=11",
          "-ar", "48000", "-ac", "2", voice])
 
     print("encoding video...")

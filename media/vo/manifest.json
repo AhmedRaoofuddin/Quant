@@ -1,62 +1,62 @@
-﻿[
-    {
-        "id":  "hook",
-        "beat":  "title",
-        "seconds":  10.493,
-        "wav":  "vo/hook.wav"
-    },
-    {
-        "id":  "problem",
-        "beat":  "compare",
-        "seconds":  15.997,
-        "wav":  "vo/problem.wav"
-    },
-    {
-        "id":  "twist",
-        "beat":  "capacity",
-        "seconds":  18.716,
-        "wav":  "vo/twist.wav"
-    },
-    {
-        "id":  "law",
-        "beat":  "curve",
-        "seconds":  17.827,
-        "wav":  "vo/law.wav"
-    },
-    {
-        "id":  "product",
-        "beat":  "ui",
-        "seconds":  17.092,
-        "wav":  "vo/product.wav"
-    },
-    {
-        "id":  "firewall",
-        "beat":  "firewall",
-        "seconds":  14.742,
-        "wav":  "vo/firewall.wav"
-    },
-    {
-        "id":  "proof",
-        "beat":  "noise",
-        "seconds":  12.323,
-        "wav":  "vo/proof.wav"
-    },
-    {
-        "id":  "skills",
-        "beat":  "skills",
-        "seconds":  18.122,
-        "wav":  "vo/skills.wav"
-    },
-    {
-        "id":  "data",
-        "beat":  "logos",
-        "seconds":  14.478,
-        "wav":  "vo/data.wav"
-    },
-    {
-        "id":  "close",
-        "beat":  "outro",
-        "seconds":  13.563,
-        "wav":  "vo/close.wav"
-    }
+[
+  {
+    "id": "hook",
+    "beat": "title",
+    "seconds": 9.672,
+    "audio": "vo/hook.mp3"
+  },
+  {
+    "id": "problem",
+    "beat": "compare",
+    "seconds": 14.64,
+    "audio": "vo/problem.mp3"
+  },
+  {
+    "id": "twist",
+    "beat": "capacity",
+    "seconds": 17.28,
+    "audio": "vo/twist.mp3"
+  },
+  {
+    "id": "law",
+    "beat": "curve",
+    "seconds": 15.168,
+    "audio": "vo/law.mp3"
+  },
+  {
+    "id": "product",
+    "beat": "ui",
+    "seconds": 16.08,
+    "audio": "vo/product.mp3"
+  },
+  {
+    "id": "firewall",
+    "beat": "firewall",
+    "seconds": 13.464,
+    "audio": "vo/firewall.mp3"
+  },
+  {
+    "id": "proof",
+    "beat": "noise",
+    "seconds": 11.304,
+    "audio": "vo/proof.mp3"
+  },
+  {
+    "id": "skills",
+    "beat": "skills",
+    "seconds": 15.432,
+    "audio": "vo/skills.mp3"
+  },
+  {
+    "id": "data",
+    "beat": "logos",
+    "seconds": 12.744,
+    "audio": "vo/data.mp3"
+  },
+  {
+    "id": "close",
+    "beat": "outro",
+    "seconds": 11.544,
+    "audio": "vo/close.mp3"
+  }
 ]

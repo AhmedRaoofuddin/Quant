@@ -35,3 +35,4 @@ supabase/.temp/
 # Video production intermediates (frames render to TEMP; only the MP4 is committed)
 media/frames/
 media/vo/*.wav
+media/vo/*.mp3

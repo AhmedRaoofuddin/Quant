@@ -34,7 +34,7 @@ not "how good is this strategy?" but "how much money can it actually run?"**
 
 <video src="https://github.com/AhmedRaoofuddin/Quant/raw/main/media/alpha-forge.mp4" controls width="100%"></video>
 
-**[Watch: media/alpha-forge.mp4](media/alpha-forge.mp4)**  ·  narrated overview, 2 min 33 s
+**[Watch: media/alpha-forge.mp4](media/alpha-forge.mp4)**  ·  narrated overview, 2 min 17 s
 
 <sub>If the player does not load, GitHub is serving the file as a download. Click the link above.</sub>
 

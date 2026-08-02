@@ -2,7 +2,7 @@
 """
 Render the Alpha-Forge product video.
 
-Scene durations come from the measured length of each narration WAV (media/vo/manifest.json), so
+Scene durations come from the measured length of each narration clip (media/vo/manifest.json), so
 picture and voice stay locked without hand-tuned timings. Frames are composited with PIL and
 handed to ffmpeg.
 
