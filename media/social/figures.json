@@ -1,0 +1,22 @@
+{
+  "nStrategies": 20,
+  "nAttributed": 20,
+  "nSignificant": 0,
+  "r2Low": 0.3725278057828234,
+  "r2High": 0.9287427424431324,
+  "momBetaMom": 0.7955218622390683,
+  "momAlphaT": -1.7523211306299877,
+  "naiveSum": 13186814148.148617,
+  "joint": 1533706915.5121505,
+  "overlapTax": 0.883693900719191,
+  "nameCount": 57,
+  "blendedSharpe": 2.1729451364007937,
+  "equalWeightSharpe": 1.6997196093246774,
+  "pbo": 0.16666666666666666,
+  "verdict": "robust",
+  "topSharpeName": "Trend following",
+  "topSharpe": 1.844121341636365,
+  "topSharpeCapacity": 613090488.9496636,
+  "topSharpeTurnover": 9.978070175438596,
+  "nObs": 692
+}
