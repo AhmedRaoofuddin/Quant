@@ -1,49 +1,61 @@
 # LinkedIn caption
 
-Video post. Paste as is: bold is Unicode so it survives LinkedIn.
+Tech stack showcase format. Plain text, paste as is.
 
-Length: 2444 of 3000. 20 hashtags. Figures verified against the live API.
-
----
-
-🎉 𝗠𝘆 𝗳𝗶𝗿𝘀𝘁 𝗾𝘂𝗮𝗻𝘁 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗼𝘂𝘁. 𝗧𝘄𝗼 𝗼𝗳 𝗶𝘁𝘀 𝘀𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘀𝗰𝗼𝗿𝗲 𝘁𝗵𝗲 𝘀𝗮𝗺𝗲 𝗦𝗵𝗮𝗿𝗽𝗲. 𝗢𝗻𝗲 𝗰𝗮𝗻 𝘁𝗮𝗸𝗲 $𝟲𝟭𝟯𝗠, 𝘁𝗵𝗲 𝗼𝘁𝗵𝗲𝗿 𝗰𝗮𝗻 𝘁𝗮𝗸𝗲 $𝟴𝗕 🚀
-
-Sharpe says nothing about which is which. That number just does not get published.
-
-📊 𝗪𝗵𝘆 𝘁𝗵𝗲 𝗴𝗮𝗽
-The 1.84 trades 10x a year. The 1.71 trades 0.5x. Cost scales with turnover. Alpha does not.
-
-🧮 𝗜𝘁 𝗴𝗲𝘁𝘀 𝘄𝗼𝗿𝘀𝗲 𝘄𝗵𝗲𝗻 𝘆𝗼𝘂 𝗿𝘂𝗻 𝗮𝗹𝗹 𝟮𝟬 𝗮𝘁 𝗼𝗻𝗰𝗲
-Separately they add to $13.2B. But they share 57 names, so a stock two strategies both want eats one day of volume twice. Together: $1.5B. I had not expected the gap to be that wide. ❌
-
-🤖 𝗔𝗹𝗹 𝗼𝗳 𝗶𝘁 𝘀𝗵𝗶𝗽𝘀 𝗮𝘀 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗮𝗯𝗹𝗲 𝗖𝗹𝗮𝘂𝗱𝗲 𝗦𝗸𝗶𝗹𝗹𝘀
-strategy-builder, backtest-firewall, strategy-capacity, claim-auditor. No dependencies, no server, no keys. Drop a folder into .claude/skills and Claude will size a book, audit a backtest, rank a strategy family, or check whether an advertised track record is even internally consistent. ⚙️
-
-🔬 𝗧𝗵𝗲 𝗽𝗮𝗿𝘁 𝗜 𝗱𝗶𝗱 𝗻𝗼𝘁 𝗲𝗻𝗷𝗼𝘆 𝗳𝗶𝗻𝗱𝗶𝗻𝗴
-I regressed all 20 against market, size, momentum, vol and reversal. Not one produced alpha at a t stat of 2. R squared ran 37 to 93%. Momentum loads 0.80 on the momentum factor and its own alpha t is minus 1.75.
-
-So it is not alpha on top of momentum. It just is momentum. 🔥
-
-🛡️ 𝗧𝗵𝗲 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹
-PBO via CSCV, deflated Sharpe, Holm haircut, block bootstrap. Pure random noise scores 97% overfit. The real library scores 17% across 252 splits. ✅
-
-🌗 One Sharpe also hides two regimes. Momentum runs 0.81 when markets are calm and minus 1.70 when they are not.
-
-⚠️ 𝗪𝗵𝗲𝗿𝗲 𝗜 𝗴𝗼𝘁 𝗶𝘁 𝘄𝗿𝗼𝗻𝗴
-I was thinning the price series to 260 points to keep charts light, and every statistic downstream quietly used that. PBO read 74%, overfit. I nearly posted it. Fixed the data path, sample went to 692, PBO fell to 17%.
-
-My headline finding was my own bug. 🚨
-
-📚 Everything else: 20 anomalies from the literature, each cited, walk forward with no look ahead. 78 stocks, 36 other instruments, filings, macro, 9 news feeds. A limit order book with real price time priority. Open source, C++ engine included.
-
-👇 Repo in the comments. Have a dig and tell me what I got wrong.
-
-Follow Ahmed Raoofuddin (ARU) for more on quant infra and production AI. 🚀
-
-#ClaudeAI #ClaudeSkills #ClaudeCode #QuantitativeFinance #SystematicTrading #AlgorithmicTrading #QuantResearch #Backtesting #RiskManagement #PortfolioManagement #AIEngineering #MachineLearning #DataScience #DeepLearning #OpenSource #Cpp #FinTech #TradingSystems #SoftwareEngineering #BuildInPublic
+Length: 2924 of 3000. 40 hashtags. Figures verified against the live API.
 
 ---
 
-## First comment
+I'm excited to share what I've been building 🚀
 
-github.com/AhmedRaoofuddin/Quant
+Alpha-Forge a quantitative research terminal that answers the question every backtest skips. Not how good a strategy is, but how much money it can actually run before its own market impact eats the edge. Public data only. No API keys, no paid terminal.
+
+The full tech stack:
+⚡ C++20 for the core engine, clean hexagonal architecture
+⚡ Next.js 14 and TypeScript for the research terminal
+⚡ Tailwind CSS for the interface
+⚡ Supabase Postgres with row level security
+⚡ CMake and Ninja for the build
+⚡ Docker Compose for dev, test and prod
+⚡ Claude Skills for packaging the engines
+⚡ Yahoo Finance, SEC EDGAR, FRED, CoinGecko and Wikidata as sources
+
+What's actually inside:
+• Almgren Chriss square root market impact model with participation caps
+• Joint capacity optimiser measuring the overlap tax across a multi strategy book
+• Long only max Sharpe allocator by projected gradient with shrunk covariance
+• Probability of backtest overfitting via combinatorially symmetric cross validation
+• Deflated and probabilistic Sharpe ratios
+• Holm Bonferroni multiple testing haircut
+• Circular block bootstrap for Sharpe confidence intervals
+• Factor attribution with Newey West standard errors
+• Two state Gaussian HMM with Baum Welch training and Viterbi decoding
+• Limit order book with price time priority matching
+• Loughran McDonald sentiment lexicon with negation handling
+• Sandboxed alpha DSL, parsed and validated, never evaluated as code
+• 20 documented anomalies from the literature, walk forward, no look ahead
+• Track record auditor that checks advertised claims for contradictions
+• Threaded RSS crawler across 9 finance feeds
+• Typed exception hierarchy mapped to exit codes and HTTP statuses
+• 51 unit and property tests
+
+This is full stack quant engineering. C++ numerics, statistical validation, a research terminal, and four installable Claude Skills working together.
+
+Two findings that surprised me. Two strategies score the same Sharpe, one holds $613M and the other $8B, purely on turnover. And run all 20 together and their capacities do not add up: $13.2B separately, $1.5B combined, because they share 57 names.
+
+The demo below shows the full flow, screening the universe, comparing 20 strategies against their capacity, and the overfitting verdict.
+
+Explore the code 👇
+
+https://github.com/AhmedRaoofuddin/Quant
+
+#AI #Quant #QuantitativeFinance #SystematicTrading #AlgorithmicTrading #Backtesting #RiskManagement #PortfolioManagement #MachineLearning #DataScience #CPlusPlus #Cpp20 #NextJS #TypeScript #TailwindCSS #Supabase #PostgreSQL #Docker #ClaudeAI #ClaudeSkills #ClaudeCode #MarketMicrostructure #OrderBook #HiddenMarkovModel #FactorInvesting #AlphaResearch #MarketImpact #Overfitting #Statistics #Econometrics #FinTech #TradingSystems #OpenSource #BuildInPublic #FullStack #SoftwareEngineering #SoftwareArchitecture #GitHub #Developer #AIEngineering
+
+---
+
+## Notes
+
+- This format puts the link in the body, matching the reference post. That does cost some
+  reach versus putting it in the first comment, but it keeps the flow intact.
+- Upload the MP4 natively rather than linking it.
+- Every number is reproducible from the repo.
