@@ -3,18 +3,16 @@
 Video post. Paste as is: the bold is Unicode so it survives LinkedIn's
 plain-text editor.
 
-Length: 2983 of the 3000 limit. 20 hashtags.
-Every figure re-verified against /api/strategies on the 692-period series.
+Length: 2927 of the 3000 limit. 20 hashtags.
+Every figure verified against /api/strategies on the 692-period series.
 
 ---
 
-🎉 𝗠𝘆 𝗳𝗶𝗿𝘀𝘁 𝗾𝘂𝗮𝗻𝘁 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗹𝗶𝘃𝗲, 𝗮𝗻𝗱 𝗜'𝗺 𝗿𝗲𝗮𝗹𝗹𝘆 𝗲𝘅𝗰𝗶𝘁𝗲𝗱 𝗮𝗯𝗼𝘂𝘁 𝘁𝗵𝗶𝘀 𝗼𝗻𝗲. 𝗜𝘁 𝗲𝘅𝗽𝗼𝘀𝗲𝘀 𝘁𝗵𝗲 𝗼𝗻𝗲 𝗻𝘂𝗺𝗯𝗲𝗿 𝗲𝘃𝗲𝗿𝘆 𝗯𝗮𝗰𝗸𝘁𝗲𝘀𝘁 𝗵𝗶𝗱𝗲𝘀 🚀
+🎉 𝗠𝘆 𝗳𝗶𝗿𝘀𝘁 𝗾𝘂𝗮𝗻𝘁 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗼𝘂𝘁, 𝗮𝗻𝗱 𝘁𝗵𝗶𝘀 𝗶𝘀 𝘁𝗵𝗲 𝗿𝗲𝘀𝘂𝗹𝘁 𝗜 𝗸𝗲𝗲𝗽 𝘀𝗵𝗼𝘄𝗶𝗻𝗴 𝗽𝗲𝗼𝗽𝗹𝗲: 𝘁𝘄𝗼 𝘀𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀, 𝘀𝗮𝗺𝗲 𝗦𝗵𝗮𝗿𝗽𝗲, 𝗼𝗻𝗲 𝗵𝗼𝗹𝗱𝘀 $𝟲𝟭𝟯𝗠 𝗮𝗻𝗱 𝘁𝗵𝗲 𝗼𝘁𝗵𝗲𝗿 𝗵𝗼𝗹𝗱𝘀 $𝟴𝗕 🚀
 
-Two strategies. Nearly identical Sharpe. One holds $613M. The other holds $8B. 👇
+Everyone reports Sharpe. Almost nobody reports the capital it survives. That gap is where funds blow up. 👇
 
-Everyone reports Sharpe. Almost nobody reports the capital it survives. That gap is where funds blow up.
-
-🤖 𝗔𝗻𝗱 𝘁𝗵𝗲 𝘄𝗵𝗼𝗹𝗲 𝘁𝗵𝗶𝗻𝗴 𝘀𝗵𝗶𝗽𝘀 𝗮𝘀 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗮𝗯𝗹𝗲 𝗖𝗹𝗮𝘂𝗱𝗲 𝗦𝗸𝗶𝗹𝗹𝘀
+🤖 𝗧𝗵𝗲 𝘄𝗵𝗼𝗹𝗲 𝘁𝗵𝗶𝗻𝗴 𝘀𝗵𝗶𝗽𝘀 𝗮𝘀 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗮𝗯𝗹𝗲 𝗖𝗹𝗮𝘂𝗱𝗲 𝗦𝗸𝗶𝗹𝗹𝘀
 strategy-builder, backtest-firewall, strategy-capacity, claim-auditor. No dependencies, no server, no keys. Drop a folder into .claude/skills and Claude will size a book, audit a backtest, rank a strategy family, or check whether someone's advertised track record is even internally consistent. Open source, C++ engine included. ⚙️
 
 📊 𝗪𝗵𝘆 𝘁𝗵𝗼𝘀𝗲 𝘁𝘄𝗼 𝗱𝗶𝗳𝗳𝗲𝗿
@@ -55,10 +53,9 @@ github.com/AhmedRaoofuddin/Quant
 
 ## Notes
 
-- Line one carries the excitement and the hook. Line two is the concrete contrast, line
-  three names the gap. That is the only part guaranteed to show before "see more".
-- Section headers sit on their own line. Denser than inline colons and easier to skim on
-  a phone, which is where most of the feed is read.
+- Line one states the finding rather than announcing a feeling. "The result I keep showing
+  people" carries the enthusiasm; saying "I am excited" only asserts it.
+- The old second line was cut because line one now contains the contrast.
 - Link in the first comment, never the body. LinkedIn throttles outbound links in posts.
 - Upload the MP4 natively rather than linking it.
 - Reply to comments in the first two hours. That window sets distribution.
