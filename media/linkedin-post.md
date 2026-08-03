@@ -1,61 +1,67 @@
 # LinkedIn caption
 
-Tech stack showcase format. Plain text, paste as is.
+Stack showcase plus the findings. Bold is Unicode so it survives
+LinkedIn's editor.
 
-Length: 2924 of 3000. 40 hashtags. Figures verified against the live API.
+Length: 2903 of 3000. 34 hashtags. Figures verified live.
 
 ---
 
 I'm excited to share what I've been building 🚀
 
-Alpha-Forge a quantitative research terminal that answers the question every backtest skips. Not how good a strategy is, but how much money it can actually run before its own market impact eats the edge. Public data only. No API keys, no paid terminal.
+🎉 𝗠𝘆 𝗳𝗶𝗿𝘀𝘁 𝗾𝘂𝗮𝗻𝘁 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗼𝘂𝘁. 𝗧𝘄𝗼 𝗼𝗳 𝗶𝘁𝘀 𝘀𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘀𝗰𝗼𝗿𝗲 𝘁𝗵𝗲 𝘀𝗮𝗺𝗲 𝗦𝗵𝗮𝗿𝗽𝗲. 𝗢𝗻𝗲 𝗰𝗮𝗻 𝘁𝗮𝗸𝗲 $𝟲𝟭𝟯𝗠, 𝘁𝗵𝗲 𝗼𝘁𝗵𝗲𝗿 𝗰𝗮𝗻 𝘁𝗮𝗸𝗲 $𝟴𝗕
 
-The full tech stack:
-⚡ C++20 for the core engine, clean hexagonal architecture
-⚡ Next.js 14 and TypeScript for the research terminal
+Sharpe says nothing about which is which. That number just does not get published. Alpha-Forge measures it. Public data only, no API keys, no paid terminal.
+
+𝗧𝗵𝗲 𝗳𝘂𝗹𝗹 𝘁𝗲𝗰𝗵 𝘀𝘁𝗮𝗰𝗸:
+⚡ C++20 core engine, clean hexagonal architecture
+⚡ Next.js 14 and TypeScript for the terminal
 ⚡ Tailwind CSS for the interface
 ⚡ Supabase Postgres with row level security
-⚡ CMake and Ninja for the build
-⚡ Docker Compose for dev, test and prod
+⚡ CMake, Ninja and Docker Compose
 ⚡ Claude Skills for packaging the engines
-⚡ Yahoo Finance, SEC EDGAR, FRED, CoinGecko and Wikidata as sources
+⚡ Yahoo Finance, SEC EDGAR, FRED, CoinGecko, Wikidata
 
-What's actually inside:
-• Almgren Chriss square root market impact model with participation caps
+𝗪𝗵𝗮𝘁'𝘀 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗶𝗻𝘀𝗶𝗱𝗲:
+• Almgren Chriss square root market impact with participation caps
 • Joint capacity optimiser measuring the overlap tax across a multi strategy book
-• Long only max Sharpe allocator by projected gradient with shrunk covariance
-• Probability of backtest overfitting via combinatorially symmetric cross validation
-• Deflated and probabilistic Sharpe ratios
-• Holm Bonferroni multiple testing haircut
-• Circular block bootstrap for Sharpe confidence intervals
+• Long only max Sharpe allocator by projected gradient, shrunk covariance
+• Backtest overfitting via combinatorially symmetric cross validation
+• Deflated Sharpe, Holm Bonferroni haircut, circular block bootstrap
 • Factor attribution with Newey West standard errors
-• Two state Gaussian HMM with Baum Welch training and Viterbi decoding
+• Gaussian HMM with Baum Welch training and Viterbi decoding
 • Limit order book with price time priority matching
 • Loughran McDonald sentiment lexicon with negation handling
 • Sandboxed alpha DSL, parsed and validated, never evaluated as code
-• 20 documented anomalies from the literature, walk forward, no look ahead
-• Track record auditor that checks advertised claims for contradictions
-• Threaded RSS crawler across 9 finance feeds
-• Typed exception hierarchy mapped to exit codes and HTTP statuses
+• 20 cited anomalies, walk forward, no look ahead
+• Track record auditor for advertised claims
 • 51 unit and property tests
 
-This is full stack quant engineering. C++ numerics, statistical validation, a research terminal, and four installable Claude Skills working together.
+📊 𝗪𝗵𝘆 𝘁𝗵𝗼𝘀𝗲 𝘁𝘄𝗼 𝗱𝗶𝗳𝗳𝗲𝗿
+The 1.84 trades 10x a year. The 1.71 trades 0.5x. Cost scales with turnover. Alpha does not.
 
-Two findings that surprised me. Two strategies score the same Sharpe, one holds $613M and the other $8B, purely on turnover. And run all 20 together and their capacities do not add up: $13.2B separately, $1.5B combined, because they share 57 names.
+🧮 𝗜𝘁 𝗴𝗲𝘁𝘀 𝘄𝗼𝗿𝘀𝗲 𝗿𝘂𝗻𝗻𝗶𝗻𝗴 𝗮𝗹𝗹 𝟮𝟬 𝗮𝘁 𝗼𝗻𝗰𝗲
+Separately they add to $13.2B. But they share 57 names, so a stock two strategies both want eats one day of volume twice. Together: $1.5B. ❌
 
-The demo below shows the full flow, screening the universe, comparing 20 strategies against their capacity, and the overfitting verdict.
+🔬 𝗔𝗹𝗽𝗵𝗮 𝗼𝗿 𝗷𝘂𝘀𝘁 𝗯𝗲𝘁𝗮
+Not one of the 20 produced alpha at a t stat of 2. R squared ran 37 to 93%. Momentum loads 0.80 on the momentum factor and its own alpha t is minus 1.75. So it is not alpha on top of momentum. It just is momentum. 🔥
+
+🛡️ Pure random noise scores 97% overfit on the firewall. The real library scores 17% across 252 splits. ✅
+
+⚠️ 𝗪𝗵𝗲𝗿𝗲 𝗜 𝗴𝗼𝘁 𝗶𝘁 𝘄𝗿𝗼𝗻𝗴
+I was thinning the price series to 260 points to keep charts light, and every statistic downstream quietly used that. Overfitting read 74%. I nearly posted it. Fixed the data path, sample went to 692, it fell to 17%. My headline finding was my own bug. 🚨
 
 Explore the code 👇
 
 https://github.com/AhmedRaoofuddin/Quant
 
-#AI #Quant #QuantitativeFinance #SystematicTrading #AlgorithmicTrading #Backtesting #RiskManagement #PortfolioManagement #MachineLearning #DataScience #CPlusPlus #Cpp20 #NextJS #TypeScript #TailwindCSS #Supabase #PostgreSQL #Docker #ClaudeAI #ClaudeSkills #ClaudeCode #MarketMicrostructure #OrderBook #HiddenMarkovModel #FactorInvesting #AlphaResearch #MarketImpact #Overfitting #Statistics #Econometrics #FinTech #TradingSystems #OpenSource #BuildInPublic #FullStack #SoftwareEngineering #SoftwareArchitecture #GitHub #Developer #AIEngineering
+#AI #Quant #QuantitativeFinance #SystematicTrading #AlgorithmicTrading #Backtesting #RiskManagement #MachineLearning #DataScience #CPlusPlus #NextJS #TypeScript #Supabase #Docker #ClaudeAI #ClaudeSkills #ClaudeCode #MarketMicrostructure #OrderBook #HiddenMarkovModel #FactorInvesting #AlphaResearch #MarketImpact #Overfitting #Statistics #Econometrics #FinTech #TradingSystems #OpenSource #BuildInPublic #FullStack #SoftwareEngineering #GitHub #AIEngineering
 
 ---
 
 ## Notes
 
-- This format puts the link in the body, matching the reference post. That does cost some
-  reach versus putting it in the first comment, but it keeps the flow intact.
+- Link sits in the body, matching your reference post. First comment reaches further if you
+  would rather trade the flow for distribution.
 - Upload the MP4 natively rather than linking it.
 - Every number is reproducible from the repo.
