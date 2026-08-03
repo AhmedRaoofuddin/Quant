@@ -3,21 +3,21 @@
 Paste as is, then retype each @name in the composer if you want real
 mentions.
 
-Length: 2985 units as LinkedIn counts it, down 290 from the version that was over.
+Length: 2996 of 3000 as LinkedIn counts it.
 
 ---
 
-I'm excited to share what I've been building 🚀
+I'm excited to share my first quant project, and I finally got to put C++ next to what I know about markets 🚀
 
-𝗤𝗨𝗔𝗡𝗧 𝗣𝗥𝗢𝗝𝗘𝗖𝗧 𝟭 | 𝗠𝘆 𝗙𝗶𝗿𝘀𝘁 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝗮𝘁𝗶𝘃𝗲 𝗥𝗲𝘀𝗲𝗮𝗿𝗰𝗵 𝗧𝗲𝗿𝗺𝗶𝗻𝗮𝗹 𝗶𝗻 𝗖++
+𝗔𝗟𝗣𝗛𝗔-𝗙𝗢𝗥𝗚𝗘 | 𝗔 𝗖𝗮𝗽𝗮𝗰𝗶𝘁𝘆-𝗔𝘄𝗮𝗿𝗲 𝗤𝘂𝗮𝗻𝘁 𝗥𝗲𝘀𝗲𝗮𝗿𝗰𝗵 𝗧𝗲𝗿𝗺𝗶𝗻𝗮𝗹
 
 Two strategies, same Sharpe. One takes $613M, the other $8B🧮
 
 🏦 𝗕𝘂𝗶𝗹𝘁 𝗵𝗼𝘄 𝘁𝗵𝗲 𝗳𝘂𝗻𝗱𝘀 𝘄𝗼𝗿𝗸
-Citadel and Millennium size every pod against its own liquidity, then manage crowding where pods overlap. AQR Capital Management and Two Sigma publish the research everyone else trades. Public backtests skip both. Betting against beta is Frazzini and Pedersen at AQR.
+Citadel and Millennium size every pod against its own liquidity, then manage crowding where pods overlap. AQR Capital Management and Two Sigma publish the research everyone else trades. Betting against beta is Frazzini and Pedersen at AQR.
 
 🤖 𝗔𝗻𝗱 𝗶𝘁 𝗮𝗹𝗹 𝘀𝗵𝗶𝗽𝘀 𝗮𝘀 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗮𝗯𝗹𝗲 𝗖𝗹𝗮𝘂𝗱𝗲 𝗦𝗸𝗶𝗹𝗹𝘀
-strategy-builder, backtest-firewall, strategy-capacity, claim-auditor. No dependencies, no server, no keys. Drop a folder into .claude/skills and Anthropic Claude will size a book, audit a backtest, rank a strategy family, or check if a track record is even consistent. ⚙️
+strategy-builder, backtest-firewall, strategy-capacity, claim-auditor. No deps, no server, no keys. Drop a folder into .claude/skills and Anthropic Claude will size a book, audit a backtest, rank a strategy family, or check if a track record is even consistent. ⚙️
 
 𝗧𝗵𝗲 𝗳𝘂𝗹𝗹 𝘁𝗲𝗰𝗵 𝘀𝘁𝗮𝗰𝗸:
 ⚡ C++20 core engine, clean hexagonal architecture
