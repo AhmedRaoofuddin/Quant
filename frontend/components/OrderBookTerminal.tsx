@@ -123,8 +123,8 @@ export function OrderBookTerminal() {
             <Stat k="Book levels" v={`${s.book.bids.length + s.book.asks.length}`} />
           </dl>
           <p className="mt-3 border-t border-line pt-2 text-[10px] leading-relaxed text-faint">
-            Matching engine mirrors the C++20 core (backend/, compiled + tested). Latent fair value,
-            Poisson flow, aggressive prints, and cancellations drive the book live.
+            Price-time priority matching against a latent fair value, with Poisson order flow,
+            aggressive prints and cancellations driving the book live.
           </p>
         </Panel>
       </div>

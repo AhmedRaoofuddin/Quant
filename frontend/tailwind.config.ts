@@ -19,6 +19,10 @@ const config: Config = {
         down: "rgb(var(--down) / <alpha-value>)",
         warn: "rgb(var(--warn) / <alpha-value>)",
         grid: "rgb(var(--grid) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        inklight: "rgb(var(--ink-light) / <alpha-value>)",
+        inkmute: "rgb(var(--ink-mute) / <alpha-value>)",
+        inkfaint: "rgb(var(--ink-faint) / <alpha-value>)",
         // Back-compat aliases so existing chart code keeps compiling.
         panel: "rgb(var(--surface) / <alpha-value>)",
         "panel-2": "rgb(var(--bg) / <alpha-value>)",

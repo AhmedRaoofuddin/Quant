@@ -26,6 +26,13 @@
   --faint: 90 100 110;
 
   --accent: 11 45 67;         /* #0B2D43 deep navy, the single accent */
+
+  /* Dark plate, used by the footer so the light page terminates rather than fading out.
+     Text tokens are the inverse ladder: light / mute / faint against near-black. */
+  --ink: 9 16 22;             /* #091016 */
+  --ink-light: 236 242 246;
+  --ink-mute: 165 180 191;
+  --ink-faint: 126 142 154;
   --accent-soft: 232 243 255; /* #E8F3FF pale blue tint */
 
   /* Semantic P&L. Muted, institutional, never neon. */
