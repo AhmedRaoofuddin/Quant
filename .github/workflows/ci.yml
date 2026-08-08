@@ -64,7 +64,10 @@ jobs:
           docker build --progress=plain -f deploy/backend.Dockerfile -t alpha-forge/backend:ci . 2>&1 | tee dbuild.txt
           code=${PIPESTATUS[0]}
           if [ "$code" -ne 0 ]; then
-            tail -n 50 dbuild.txt | while IFS= read -r l; do echo "::error::${l}"; done
+            # The compiler diagnostic is what matters; grep it directly rather than tailing, since
+            # buildx interleaves setup noise around the actual failure.
+            grep -iE 'error:|error ?:|undefined reference|No such file|fatal' dbuild.txt \
+              | head -n 30 | while IFS= read -r l; do echo "::error::${l}"; done
           fi
           exit $code
       - name: Build frontend image
