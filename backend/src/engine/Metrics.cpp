@@ -67,7 +67,12 @@ double stddev_of(const std::vector<double>& v) {
 double sharpe(const std::vector<double>& returns, int periods) {
     const auto r = finite(returns);
     const double sd = stddev_of(r);
-    if (r.size() < 2 || sd == 0.0) return 0.0;
+    // Constant input does not yield sd exactly 0.0: the two-pass mean carries a rounding residual,
+    // so the deviations are ~1e-18 rather than zero, and dividing the mean by that explodes. Treat
+    // any volatility far below the smallest plausible real return dispersion as no risk. Real daily
+    // vol sits near 1e-2 and never below ~1e-6; float residuals here are ~1e-16, so 1e-12 separates
+    // them cleanly.
+    if (r.size() < 2 || sd < 1e-12) return 0.0;
     return std::sqrt(static_cast<double>(periods)) * mean_of(r) / sd;
 }
 

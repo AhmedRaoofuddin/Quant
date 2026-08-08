@@ -146,7 +146,9 @@ export function analyseCapacity(
   // than a capacity, and the participation cap is what really limits deployment.
   const impactCapacityUnbounded = capacityAtHalfSharpe >= maxAum * 0.999;
   const zeroAlphaUnbounded = capacityAtZeroAlpha >= maxAum * 0.999;
-  const liquidityBinds = liquidityLimited > 0 && (impactCapacityUnbounded || liquidityLimited < capacityAtHalfSharpe);
+  // <= not <: a book too thin to execute pins both limits to the sweep floor, and liquidity is the
+  // more fundamental constraint, so it wins the tie. Mirrors backend/src/capacity/CapacityModel.cpp.
+  const liquidityBinds = liquidityLimited > 0 && (impactCapacityUnbounded || liquidityLimited <= capacityAtHalfSharpe);
   const deployableCapacity = liquidityBinds ? liquidityLimited : capacityAtHalfSharpe;
 
   return {

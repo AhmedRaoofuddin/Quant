@@ -282,7 +282,8 @@ export function analysePortfolio(
   const half = 0.5 * blendedGrossReturn;
   const impactCap = solveCrossing(minAum, maxAum, (x) => netReturnAt(x) - half);
   const impactUnbounded = impactCap >= maxAum * 0.999;
-  const liquidityBinds = liquidityLimited > 0 && (impactUnbounded || liquidityLimited < impactCap);
+  // <= not <: liquidity wins the tie when the book is too thin to execute. Mirrors CapacityModel.
+  const liquidityBinds = liquidityLimited > 0 && (impactUnbounded || liquidityLimited <= impactCap);
   const jointCapacity = liquidityBinds ? liquidityLimited : impactCap;
 
   // The naive figure is the sum over strategies that actually received an allocation. Including

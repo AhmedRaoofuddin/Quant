@@ -107,8 +107,12 @@ CapacityReport CapacityModel::analyse(double min_aum, double max_aum, int steps)
     r.zero_alpha_unbounded = r.capacity_at_zero_alpha >= max_aum * 0.999;
     r.peak_pnl_unbounded = r.peak_net_pnl_aum >= max_aum * 0.999;
     r.sweep_max_aum = max_aum;
+    // <= not <: when the participation cap binds at or before the impact half-Sharpe point they
+    // are the same limit, and for a book too thin to execute the size liquidity is the more
+    // fundamental constraint, so it wins the tie. (A razor-thin book pins both figures to the
+    // sweep floor, and a strict < would then mislabel it "impact".)
     const bool liquidity_binds = r.liquidity_limited_aum > 0.0 &&
-        (r.impact_capacity_unbounded || r.liquidity_limited_aum < r.capacity_at_half_sharpe);
+        (r.impact_capacity_unbounded || r.liquidity_limited_aum <= r.capacity_at_half_sharpe);
     r.binding_constraint = liquidity_binds ? "liquidity" : "impact";
     r.deployable_capacity = liquidity_binds ? r.liquidity_limited_aum : r.capacity_at_half_sharpe;
     return r;
