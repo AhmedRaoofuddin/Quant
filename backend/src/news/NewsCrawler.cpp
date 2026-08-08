@@ -1,6 +1,7 @@
-#include "alphaforge/news/NewsCrawler.hpp"
+﻿#include "alphaforge/news/NewsCrawler.hpp"
 
 #include <algorithm>
+#include <unordered_map>
 #include <atomic>
 #include <chrono>
 #include <functional>

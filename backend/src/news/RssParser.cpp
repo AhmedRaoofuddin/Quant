@@ -1,6 +1,7 @@
-#include "alphaforge/news/RssParser.hpp"
+﻿#include "alphaforge/news/RssParser.hpp"
 
 #include <algorithm>
+#include <cstdint>
 #include <array>
 #include <cctype>
 #include <ctime>

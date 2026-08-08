@@ -1,6 +1,7 @@
-#include "alphaforge/allocator/Allocator.hpp"
+﻿#include "alphaforge/allocator/Allocator.hpp"
 
 #include <cmath>
+#include <memory>
 
 #include "alphaforge/platform/Error.hpp"
 

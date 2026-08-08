@@ -1,6 +1,7 @@
-#include "alphaforge/app/Factory.hpp"
+﻿#include "alphaforge/app/Factory.hpp"
 
 #include <cstdlib>
+#include <memory>
 
 #include "alphaforge/data/CsvDataSource.hpp"
 #include "alphaforge/data/SyntheticDataSource.hpp"

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 ///
 /// \file RssParser.hpp
 /// \brief A single-pass, allocation-light RSS/Atom parser.
@@ -8,6 +8,7 @@
 /// the low milliseconds even across dozens of feeds.
 ///
 #include <string>
+#include <cstdint>
 #include <string_view>
 #include <vector>
 

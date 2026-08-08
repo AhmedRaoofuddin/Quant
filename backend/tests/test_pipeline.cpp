@@ -1,4 +1,6 @@
-#include "alphaforge/app/Pipeline.hpp"
+﻿#include "alphaforge/app/Pipeline.hpp"
+
+#include <cstdint>
 
 #include "alphaforge/data/Repository.hpp"
 #include "alphaforge/data/SyntheticDataSource.hpp"

@@ -1,6 +1,7 @@
-#include "alphaforge/news/Sentiment.hpp"
+﻿#include "alphaforge/news/Sentiment.hpp"
 
 #include <algorithm>
+#include <unordered_map>
 #include <cctype>
 #include <cmath>
 

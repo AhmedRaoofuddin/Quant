@@ -1,6 +1,7 @@
-#include "alphaforge/data/Repository.hpp"
+﻿#include "alphaforge/data/Repository.hpp"
 
 #include <algorithm>
+#include <optional>
 #include <filesystem>
 #include <fstream>
 #include <map>
