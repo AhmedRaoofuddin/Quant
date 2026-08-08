@@ -2,7 +2,11 @@
 **/node_modules
 **/.next
 **/out
-**/data
+# Anchored to the context root, not **/data. The recursive form also excluded the C++
+# backend/src/data and backend/include/alphaforge/data directories from the build context, so the
+# image build could not find DataSource.hpp. Same class of bug as the .gitignore rule.
+/data
+frontend/.cache
 **/test_tmp_data*
 **/.git
 **/.env*
