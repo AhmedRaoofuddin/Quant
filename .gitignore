@@ -1,13 +1,16 @@
 # Build artifacts
 backend/build/
-build/
+/build/
 *.o
 *.obj
 *.a
 *.exe
 
 # Data & runtime
-data/
+# Leading slash matters. A bare `data/` matches at ANY depth, so it silently swallowed
+# backend/src/data/ and backend/include/alphaforge/data/, and CI checked out a tree with no data
+# layer. Anchor every directory rule that names a common word.
+/data/
 # Runtime cache of fetched market data. Not redistributed: see LICENSE.
 frontend/.cache/
 test_tmp_data*/
@@ -16,7 +19,7 @@ test_tmp_data*/
 # Node / Next
 node_modules/
 .next/
-out/
+/out/
 
 # Env & secrets
 .env
