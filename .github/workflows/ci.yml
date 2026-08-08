@@ -18,7 +18,17 @@ jobs:
       - name: Build (warnings must be clean)
         run: cmake --build backend/build
       - name: Test
-        run: ctest --test-dir backend/build --output-on-failure
+        working-directory: backend/build
+        run: |
+          set +e
+          ./tests/alphaforge_tests | tee test_output.txt
+          code=${PIPESTATUS[0]}
+          # Surface each failing case as a GitHub annotation so the failure is visible without
+          # opening the full log. The in-tree framework prints "[FAIL] name" then an indented
+          # assertion line, so capture both.
+          awk '/\[FAIL\]/{print; if (getline nxt) print nxt}' test_output.txt \
+            | while IFS= read -r line; do echo "::error::${line}"; done
+          exit $code
 
   frontend:
     name: Frontend (Next.js) — typecheck & build
